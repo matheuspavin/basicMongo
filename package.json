@@ -1,0 +1,23 @@
+{
+  "name": "basicmongo",
+  "version": "1.0.0",
+  "description": "basic project with mongo connection",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheuspavin/basicMongo.git"
+  },
+  "author": "Matheus Pavin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheuspavin/basicMongo/issues"
+  },
+  "homepage": "https://github.com/matheuspavin/basicMongo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}
