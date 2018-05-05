@@ -2,6 +2,7 @@ const router = require('express').Router();
 const cacheService = require('../services/cacheService');
 
 router.get('/caches', async (req, res) => {
+    const add = await cacheService.insert();
     const result = await cacheService.getAll();
     return res.json(result);
 });
