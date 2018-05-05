@@ -1,34 +1,37 @@
 dbConnection = require('./databaseConnection');
 
+var cacheCollection;
 const mainDb = async function () {
-    const conn = await dbConnection.cacheCollection() ;
+    const conn = await dbConnection.cacheCollection();
     console.log(conn);
     return conn;
-}
-const cacheCollection = mainDb();
-console.log(cacheCollection)
+};
 
-const insert = cacheCollection.insert({name: "testCache", description: "testing the insert of the cache"}, function(err, result) {
-    if(err)
-        throw err;
+cacheCollection = mainDb();
+console.log(cacheCollection);
+// console.log(cacheCollection)
+
+// const insert = cacheCollection.insert({name: "testCache", description: "testing the insert of the cache"}, function(err, result) {
+//     if(err)
+//         throw err;
  
-    console.log("entry saved");
-});
+//     console.log("entry saved");
+// });
 
-const cursor = cacheCollection.find();
-cursor.each(function(err, doc) {
-    if(err)
-        throw err;
-    if(doc==null)
-        return;
+// const cursor = cacheCollection.find();
+// cursor.each(function(err, doc) {
+//     if(err)
+//         throw err;
+//     if(doc==null)
+//         return;
  
-    console.log("document find:");
-    console.log(doc.name);
-    console.log(doc.company.employed);
-});
+//     console.log("document find:");
+//     console.log(doc.name);
+//     console.log(doc.company.employed);
+// });
 
-module.exports = {
-    db,
-    insert,
-    cursor
-}
+// module.exports = {
+//     db,
+//     insert,
+//     cursor
+// }
