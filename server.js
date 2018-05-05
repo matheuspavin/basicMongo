@@ -21,7 +21,7 @@ app.all('*', function(req, res, next) {
 	next();
 });
 
-app.use('/cache', ordersRoute);
+app.use('/cache', cacheRoute);
 app.get("/", function (req, res) {
 	res.redirect("client");
 });
