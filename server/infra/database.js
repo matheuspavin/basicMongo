@@ -1,7 +1,11 @@
 dbConnection = require('./databaseConnection');
 
-
-const cacheCollection = dbConnection.cacheCollection;
+const mainDb = async function () {
+    const conn = await dbConnection.cacheCollection() ;
+    console.log(conn);
+    return conn;
+}
+const cacheCollection = mainDb();
 console.log(cacheCollection)
 
 const insert = cacheCollection.insert({name: "testCache", description: "testing the insert of the cache"}, function(err, result) {
