@@ -1,13 +1,12 @@
 dbConnection = require('./databaseConnection');
 
-var cacheCollection;
 const mainDb = async function () {
     const conn = await dbConnection.cacheCollection();
     console.log(conn);
     return conn;
 };
 
-cacheCollection = mainDb();
+const cacheCollection = mainDb();
 console.log(cacheCollection);
 // console.log(cacheCollection)
 
